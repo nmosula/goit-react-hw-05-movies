@@ -3,10 +3,11 @@ import { MoviesList } from "components/MoviesList";
 
 export const Movies = () => {
     const movies = getMovies();
+    console.log("Movies=",movies);
     return (
         <main>
             <p>
-                <MoviesList movies={movies} />
+                {/* <MoviesList movies={movies} /> */}
             </p>
         </main>
     )
