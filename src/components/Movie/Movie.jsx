@@ -32,7 +32,7 @@ function Movie({ movie: { title, posterPath, overview, genres, vote, year } }) {
               <h1>
                 {title} ({year ? year : 'xxxx'})
               </h1>
-              {vote !== 0 && <Rate>{vote}*</Rate>}
+              {vote !== 0 && <Rate>{vote}%</Rate>}
             </MovieInfoWrapper>
             <h2>Overview</h2>
             {overview ? <p>{overview}</p> : 'Information is not available'}
@@ -68,7 +68,7 @@ Movie.propTypes = {
     posterPath: PropTypes.string,
     overview: PropTypes.string,
     genres: PropTypes.string,
-    vote: PropTypes.string,
+    vote: PropTypes.number,
     year: PropTypes.string,
   }).isRequired,
 };

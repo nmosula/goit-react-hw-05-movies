@@ -27,7 +27,7 @@ export async function fetchMovieById(movieId) {
     posterPath: isAvailableImage(poster_path),
     overview,
     genres: genres.map(genre => genre.name).join(', '),
-    vote: vote_average.toFixed(1),
+    vote: vote_average.toFixed(1)*10,
     year: release_date.slice(0, 4),
   };
 
