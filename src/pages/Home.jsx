@@ -13,12 +13,10 @@ export const Home = () => {
     const getTrandingMovies = async () => {
       setStatus('pending');
       try {
-        const { movies } = await fetchTrandingMovies();
-    
-        setMovies([...movies]);
-        setStatus('resolved');
-
+          const { movies } = await fetchTrandingMovies();
           
+          setMovies([...movies]);
+          setStatus('resolved');          
       }
       catch (error) {
         console.error(error);
