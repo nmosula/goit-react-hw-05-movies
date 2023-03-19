@@ -1,25 +1,39 @@
-import { getMovieById } from "Api";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { fetchMovieById } from "Api";
+import { useState, useEffect } from 'react';
+import Loader from "components/Loader";
+import { useParams } from "react-router-dom";
+import Movie from "components/Movie/Movie";
 
 export const MovieDetails = () => {
-    const { movieId } = useParams();
-    const movie = getMovieById(movieId);
-    
-    return (
-        <main>
-            <h2>
-                Movie - {movie.name}
-            </h2>
 
-            <ul>
-                <li>
-                    <Link to="cast">cast</Link>
-                </li>
-                <li>
-                    <Link to="reviews">reviews</Link>
-                </li>
-            </ul>
-            <Outlet />
-        </main>
+    const [movieDetails, setMovieDetails] = useState('');
+    const [status, setStatus] = useState('idle');
+
+    const { movieId } = useParams();
+
+    useEffect(() => {
+
+        if (!movieId) return;
+        
+        const getMovieById = async () => {
+            setStatus('pending');
+            try {
+                const movie = await fetchMovieById(movieId);
+                setMovieDetails(movie);
+                setStatus('resolved');
+            }
+            catch (error) {
+                console.error(error);
+            }
+        }
+
+        getMovieById();
+    }, [movieId]);
+        
+    return (
+        <>
+        {status === 'pending' && <Loader />}
+        {status === 'resolved' && <Movie movie={movieDetails} />}
+        </>
     )
 }
