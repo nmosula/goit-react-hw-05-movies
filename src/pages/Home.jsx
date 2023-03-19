@@ -1,20 +1,38 @@
+import { useState, useEffect } from 'react';
+import { fetchTrandingMovies } from "Api";
+import Loader from "components/Loader";
+import { MoviesList } from "components/MoviesList";
+
 export const Home = () => {
+
+    const [movies, setMovies] = useState('[]');
+    const [status, setStatus] = useState('idle');
+    
+    useEffect(() => {
+
+    const getTrandingMovies = async () => {
+      setStatus('pending');
+      try {
+        const { movies } = await fetchTrandingMovies();
+    
+        setMovies([...movies]);
+        setStatus('resolved');
+
+          
+      }
+      catch (error) {
+        console.error(error);
+      }   
+    }
+
+    getTrandingMovies();
+    }, []);
+    
     return (
         <main>
-            <h1>Home</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus
-                laborum amet ab cumque sit nihil dolore modi error repudiandae
-                perspiciatis atque voluptas corrupti, doloribus ex maiores quam magni
-                mollitia illum dolor quis alias in sequi quod. Sunt ex numquam hic
-                asperiores facere natus sapiente cum neque laudantium quam, expedita
-                voluptates atque quia aspernatur saepe illo, rem quasi praesentium
-                aliquid sed inventore obcaecati veniam? Nisi magnam vero, dolore
-                praesentium totam ducimus similique asperiores culpa, eius amet
-                repudiandae quam ut. Architecto commodi, tempore ut nostrum voluptas
-                dolorum illum voluptatum dolores! Quas perferendis quis alias excepturi
-                eaque voluptatibus eveniet error, nulla rem iusto?
-            </p>
+            {status === 'pending' && <Loader />}
+            <h1>Tranding today</h1>
+                {status === 'resolved' && <MoviesList movies={movies} />}
         </main>
     )
 }
