@@ -1,13 +1,12 @@
-import { getMovies } from "Api";
-import { MoviesList } from "components/MoviesList";
+// import { getMovies } from "Api";
+// import { MoviesList } from "components/MoviesList";
 
 export const Movies = () => {
-    const movies = getMovies();
-    console.log("Movies=",movies);
+
     return (
         <main>
             <p>
-                {/* <MoviesList movies={movies} /> */}
+                Movies
             </p>
         </main>
     )
