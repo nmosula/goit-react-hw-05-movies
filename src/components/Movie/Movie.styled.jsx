@@ -77,7 +77,7 @@ export const Rate = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
+  width: 150px;
   height: 30px;
   background-color: #000;
   color: #ebebeb;
