@@ -10,7 +10,8 @@ export const MoviesList = ({ movies }) => {
                         {movie.title}
                     </Link>
                 </li>
-            ))}
+                ))
+            }
         </ul>
     )
 }
