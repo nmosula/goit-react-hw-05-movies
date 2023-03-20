@@ -3,6 +3,7 @@ import { MovieDetails } from "pages/MovieDetails";
 import Movies from "pages/Movies";
 import { NavLink, Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
+import { MovieCast } from "./MovieCast/MovieCast";
 
 export const App = () => {
   return (
@@ -17,7 +18,7 @@ export const App = () => {
           <Route index element={<Home />} />
           <Route path="movies" element={<Movies />} />
           <Route path="movies/:movieId" element={<MovieDetails />}>
-            <Route path="cast" element={<p>Page Cast</p>} />
+            <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<p>Page Reviews</p>} />
           </Route>
           <Route path="*" element={<Home />} />
