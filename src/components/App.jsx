@@ -4,6 +4,7 @@ import Movies from "pages/Movies";
 import { NavLink, Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import { MovieCast } from "./MovieCast/MovieCast";
+import { MovieReview } from "./MovieReview/MovieReview";
 
 export const App = () => {
   return (
@@ -19,7 +20,7 @@ export const App = () => {
           <Route path="movies" element={<Movies />} />
           <Route path="movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<MovieCast />} />
-            <Route path="reviews" element={<p>Page Reviews</p>} />
+            <Route path="reviews" element={<MovieReview />} />
           </Route>
           <Route path="*" element={<Home />} />
         </Route>
