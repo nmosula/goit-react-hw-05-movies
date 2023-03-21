@@ -80,5 +80,5 @@ export async function fetchMoviesByQuery(query) {
     }
   )
 
-  return { movies };
+  return { movies, totalResults: response.data.total_results };
 };
