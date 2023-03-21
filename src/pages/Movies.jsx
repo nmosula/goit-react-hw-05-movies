@@ -15,11 +15,11 @@ export const Movies = () => {
     
     useEffect(() => {
         if (!query) return;
-        
+
         const getMoviesByQuery = async () => {
         setStatus('pending');
             try {
-                const { movies, totalResults } = await fetchMoviesByQuery();
+                const { movies, totalResults } = await fetchMoviesByQuery(query);
 
                 if (totalResults === 0) {
                     Notiflix.Notify.warning(`Нажаль, нічого не знайдено, повторіть пошук`);
@@ -27,7 +27,7 @@ export const Movies = () => {
                     setMovies([]);
                     setQuery(null);
                 }
-                
+
                 setMovies(movies);
                 setStatus('resolved');          
             }
