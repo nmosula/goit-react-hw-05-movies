@@ -1,18 +1,13 @@
 import { Home } from "pages/Home";
 import { MovieDetails } from "pages/MovieDetails";
 import Movies from "pages/Movies";
-import { NavLink, Route, Routes } from "react-router-dom";
-import Layout from "./Layout";
+import { Route, Routes } from "react-router-dom";
+import { Layout } from "./Layout/Layout";
 import { MovieCast } from "./MovieCast/MovieCast";
 import { MovieReview } from "./MovieReview/MovieReview";
 
 export const App = () => {
   return (
-    <div>
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/movies">Movies</NavLink>
-      </nav>
       
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -25,6 +20,6 @@ export const App = () => {
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>
-    </div>
+
   );
 };
