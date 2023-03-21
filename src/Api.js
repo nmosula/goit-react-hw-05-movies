@@ -35,7 +35,6 @@ export async function fetchMovieById(movieId) {
 
 export async function fetchMovieCast(movieId) {
   const response = await axios.get(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`);
-  // console.log(response.data.cast);
 
   const movieCast = response.data.cast.map(
     ({ id, name, profile_path, character }) => {
@@ -50,4 +49,21 @@ export async function fetchMovieCast(movieId) {
 
   return movieCast;
 
+};
+
+
+export async function fetchMovieReview(movieId) {
+  const response = await axios.get(`${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}`);
+
+  const movieReview = response.data.results.map(
+    ({ id, author, content }) => {
+      return {
+        id,
+        author,
+        content,
+      }
+    }
+  );
+
+  return movieReview;
 };
