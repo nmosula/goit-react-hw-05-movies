@@ -20,7 +20,7 @@ function SearchForm({ onSubmit }) {
     <Form onSubmit={handleSubmit}>
       <FormInput
         type="text"
-        name="value"
+        name="searchValue"
         onChange={handleChange}
         value={values.searchValue}
         placeholder="Search movies"
