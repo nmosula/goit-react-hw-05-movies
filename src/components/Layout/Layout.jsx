@@ -1,3 +1,5 @@
+import Loader from "components/Loader";
+import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { HeaderNav, HeaderNavLink } from "./Layout.styled";
 
@@ -10,7 +12,9 @@ export const Layout = () => {
                 <HeaderNavLink to="/movies">Movies</HeaderNavLink>
             </HeaderNav>
             
-            <Outlet />
+            <Suspense fallback={<Loader/>}>
+                <Outlet />
+            </Suspense>
         </>
     )
 }
