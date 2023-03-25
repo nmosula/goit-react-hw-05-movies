@@ -1,6 +1,6 @@
-import CastItem from "components/CastItem/CastItem";
+import CastItem from "components/CastItem";
 
-const { CastList } = require("./CastGallery.styled");
+import { CastList } from "./CastGallery.styled";
 
 function CastGallery ({cast}) {
     return (
