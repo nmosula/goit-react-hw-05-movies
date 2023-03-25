@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { fetchMoviesByQuery } from "Api";
 import Loader from "components/Loader";
-import { MoviesList } from "components/MoviesList";
 import { useSearchParams } from 'react-router-dom';
 import Notiflix from 'notiflix';
 import SearchForm from 'components/SearchForm';
+import MoviesList from 'components/MoviesList';
 
 export const Movies = () => {
 

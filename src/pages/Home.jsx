@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchTrandingMovies } from "Api";
 import Loader from "components/Loader";
-import { MoviesList } from "components/MoviesList";
+import MoviesList from 'components/MoviesList';
 
 export const Home = () => {
 

@@ -13,13 +13,13 @@ export const StyledLink = styled(Link)`
   font-size: 16px;
   font-weight: 500;
   text-align: center;
-  background-color: #ebebeb;
-  color: #000;
+  background-color: #3B3B7C;
+  color: #FFF;
   border-radius: 10px;
   transition: color 250ms linear, background-color 250ms linear;
   &:hover,
   &:focus-visible {
-    background-color: #000;
+    background-color: #4AB51A;
     color: #ebebeb;
   }
 `;
@@ -79,7 +79,7 @@ export const Rate = styled.p`
   align-items: center;
   width: 150px;
   height: 30px;
-  background-color: #000;
+  background-color: #3B3B7C;
   color: #ebebeb;
   font-size: 18px;
   border-radius: 5px;

@@ -37,3 +37,5 @@ export const MovieCast = () => {
         </>
     )
 }
+
+export default MovieCast;

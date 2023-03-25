@@ -6,7 +6,7 @@ export const Form = styled.form`
   width: 100%;
   max-width: 600px;
   margin: 10px 0;
-  background-color: #ebebeb;
+  background-color: #3B3B7C;
   border-radius: 1px;
   overflow: hidden;
 `;
@@ -16,10 +16,8 @@ export const SearchButton = styled.button`
   width: 48px;
   height: 48px;
   border: 0;
-  background-image: url('https://www.flaticon.com/free-icon/search-interface-symbol_54481');
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #3B3B7C;
+  color: #fff;
   opacity: 0.6;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -34,8 +32,8 @@ export const FormInput = styled.input`
   font-size: 20px;
   border: none;
   outline: none;
-  padding-left: 4px;
-  padding-right: 4px;
+  color: #3B3B7C;
+  padding: 4px;
   &::placeholder {
     font-size: 18px;
   }

@@ -11,10 +11,10 @@ export const ReviewsList = styled.ul`
 export const ReviewItem = styled.li`
   padding: 15px;
   list-style: none;
-  border: 3px solid #000;
+  border: 3px solid #3B3B7C;
   border-radius: 10px;
 `;
 
 export const ReviewTitle = styled.h2`
-    color: #000;
+    color: #3B3B7C;
 `
